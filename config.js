@@ -8,7 +8,7 @@ module.exports = {
     publicDir: path.resolve(__dirname, './public'),
     logPath: path.resolve(__dirname, './logs/koa-template.log'),
     postgres: {
-        database: 'photomatic',
+        database: 'footage',
         username: 'islab',
         password: 'Ty6Lb!Gn85hQ',
         host: 'postgres',

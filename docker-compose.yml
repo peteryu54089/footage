@@ -14,7 +14,7 @@ services:
     environment:
       POSTGRES_USER: islab
       POSTGRES_PASSWORD: Ty6Lb!Gn85hQ
-      POSTGRES_DB: photomatic
+      POSTGRES_DB: footage
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
