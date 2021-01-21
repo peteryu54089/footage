@@ -1,7 +1,9 @@
 'use strict'
 
-const index = async (ctx, next) => {
-    ctx.body = 'index';
+const index = async(ctx) => {
+    await ctx.render('index', {
+        
+    }) 
 };
 
 module.exports = index;

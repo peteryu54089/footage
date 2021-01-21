@@ -3,6 +3,7 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser')();
 const staticCache = require('koa-static-cache');
+const views = require('koa-views');
 
 const config = require('./config');
 const publicRouter = require('./routes/public');
@@ -20,6 +21,11 @@ app.use(errorHandler);
 // Global Middlewares
 app.use(bodyParser);
 app.use(staticCache(config.publicDir));
+
+// Views
+app.use(views(__dirname + '/public', {
+    extension: 'pug'
+}));
 
 // Routes
 app.use(publicRouter.routes(), publicRouter.allowedMethods());
