@@ -6,6 +6,7 @@ head
   link(rel='icon' href='favicon.ico')
   link(rel='shortcut icon' href='favicon.ico')
   link(rel='bookmark' href='favicon.ico')
+  link(rel='stylesheet' href='assets/css/strata.css')
   link(rel='stylesheet' href='assets/css/main.css')
   link(rel='stylesheet' href='assets/css/editorial.css')
   noscript
@@ -79,15 +80,41 @@ head
               a(href='javascript:void(0)') 注意事項
         li
           a.button.primary(href='#') 登入
-  // Banner
-  section#banner
-    .content
-      header
-        h2 Get started now
-        p
-          | A good photograph is knowing where to stand.
-      span.image
-        img(src='images/camera.jpg' alt='')
+  // Main
+  #main
+    // Two
+    section#two
+      .row
+        article.col-6.col-12-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/01.jpg')
+            img(src='images/thumbs/01.jpg' alt='')
+          h3 Magna sed consequat tempus
+          p Lorem ipsum dolor sit amet nisl sed nullam feugiat.
+        article.col-6.col-12-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/02.jpg')
+            img(src='images/thumbs/02.jpg' alt='')
+          h3 Ultricies lacinia interdum
+          p Lorem ipsum dolor sit amet nisl sed nullam feugiat.
+        article.col-6.col-12-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/03.jpg')
+            img(src='images/thumbs/03.jpg' alt='')
+          h3 Tortor metus commodo
+          p Lorem ipsum dolor sit amet nisl sed nullam feugiat.
+        article.col-6.col-12-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/04.jpg')
+            img(src='images/thumbs/04.jpg' alt='')
+          h3 Quam neque phasellus
+          p Lorem ipsum dolor sit amet nisl sed nullam feugiat.
+        article.col-6.col-12-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/05.jpg')
+            img(src='images/thumbs/05.jpg' alt='')
+          h3 Nunc enim commodo aliquet
+          p Lorem ipsum dolor sit amet nisl sed nullam feugiat.
+        article.col-6.col-12-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/06.jpg')
+            img(src='images/thumbs/06.jpg' alt='')
+          h3 Risus ornare lacinia
+          p Lorem ipsum dolor sit amet nisl sed nullam feugiat.
   // Footer
   footer#footer
     ul.icons
@@ -121,4 +148,6 @@ script(src='assets/js/breakpoints.min.js')
 script(src='assets/js/util.js')
 script(src='assets/js/main.js')
 script(src='assets/js/editorial.js')
+script(src='assets/js/jquery.poptrox.min.js')
+script(src='assets/js/strata.js')
 

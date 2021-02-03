@@ -97,8 +97,14 @@ em, i {
 p {
     margin: 0 0 2em 0;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     color: #ffffff;
+    font-weight: 300;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+}
+h3, h4, h5, h6 {
+    color: black;
     font-weight: 300;
     line-height: 1em;
     margin: 0 0 1em 0;

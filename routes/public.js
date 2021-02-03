@@ -3,13 +3,13 @@
 const Router = require('koa-router');
 const index = require('../controllers/index');
 const db = require('../controllers/db');
-const footage = require('../controllers/footage');
+const classic = require('../controllers/classic');
 
 const router = new Router();
 
 router.get('/', index);
 router.get('/db', db);
-router.get('/footage-black', footage.black);
+router.get('/classic-black', classic.black);
 
 module.exports = router;
 
