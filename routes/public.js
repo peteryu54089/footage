@@ -5,6 +5,7 @@ const index = require('../controllers/index');
 const db = require('../controllers/db');
 const classic = require('../controllers/classic');
 const darkroom = require('../controllers/darkroom');
+const plus = require('../controllers/plus');
 
 const router = new Router();
 
@@ -18,6 +19,7 @@ router.get('/darkroom-class', darkroom.class);
 router.get('/darkroom-lab', darkroom.lab);
 router.get('/darkroom-price', darkroom.price);
 router.get('/darkroom-photobooth', darkroom.photobooth);
+router.get('/plus-color', plus.color);
 
 module.exports = router;
 

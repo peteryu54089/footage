@@ -115,7 +115,7 @@ em, i {
     font-weight: bold;
 }
 .strata-section h2 {
-    font-size: 1.5em;
+    font-size: 1.35em;
     line-height: 1.5em;
     font-weight: bold;
 }
@@ -1356,9 +1356,6 @@ header h4+p, header h5+p, header h6+p {
     font-size: 0.9em;
     margin-top: -0.6em;
     line-height: 1.5em;
-}
-header.strata-major h2 {
-    font-size: 2em;
 }
 header.strata-major {
     margin: 0 0 1em 0;
