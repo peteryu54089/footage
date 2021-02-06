@@ -145,13 +145,10 @@ sup {
     position: relative;
     top: -0.5em;
 }
-hr {
-    border: 0;
-    border-bottom: solid 2px #efefef;
-    margin: 2em 0;
-}
 hr.strata-major {
-    margin: 3em 0;
+    border: 0;
+    border-bottom: solid 2px #e44c65;
+    margin: -0.5em 0 2em 0;
 }
 blockquote {
     border-left: solid 6px #efefef;
