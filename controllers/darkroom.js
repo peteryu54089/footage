@@ -8,5 +8,11 @@ darkroom.film = async(ctx) => {
     });
 };
 
+darkroom.class = async(ctx) => {
+    await ctx.render('darkroom-class', {
+        
+    });
+};
+
 module.exports = darkroom;
 
