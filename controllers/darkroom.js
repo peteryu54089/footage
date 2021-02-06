@@ -26,5 +26,11 @@ darkroom.price = async(ctx) => {
     });
 };
 
+darkroom.photobooth = async(ctx) => {
+    await ctx.render('darkroom-photobooth', {
+        
+    });
+};
+
 module.exports = darkroom;
 
