@@ -5,7 +5,13 @@ const classic = {};
 classic.black = async(ctx) => {
     await ctx.render('classic-black', {
         
-    }) 
+    });
+};
+
+classic.price = async(ctx) => {
+    await ctx.render('classic-price', {
+    
+    });
 };
 
 module.exports = classic;

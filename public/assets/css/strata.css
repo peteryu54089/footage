@@ -1899,7 +1899,7 @@ input[type="submit"], input[type="reset"], input[type="button"], .strata-button 
     height: 3.15em;
     height: calc(2.75em + 6px);
     line-height: 2.75em;
-    padding: 0 1.5em;
+    padding: 0 0em;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
@@ -1930,17 +1930,17 @@ input[type="submit"].large, input[type="reset"].large, input[type="button"].larg
     font-size: 1.35em;
 }
 input[type="submit"].primary, input[type="reset"].primary, input[type="button"].primary, .strata-button.primary {
-    background-color: #e44c65;
     border-color: #e44c65;
-    color: #ffffff !important;
+    color: #e44c65 !important;
 }
 input[type="submit"].primary:hover, input[type="reset"].primary:hover, input[type="button"].primary:hover, .strata-button.primary:hover {
-    background-color: #5cc6a7;
-    border-color: #5cc6a7;
+    border-color: #e44c65;
+    color: #e44c65 !important;
 }
 input[type="submit"].primary:active, input[type="reset"].primary:active, input[type="button"].primary:active, .strata-button.primary:active {
-    background-color: #3eb08f;
-    border-color: #3eb08f;
+    background-color: rgba(228, 76, 101, 0.15);
+    border-color: #e44c65;
+    color: #e44c65 !important;
 }
 input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"].disabled, input[type="reset"]:disabled, input[type="button"].disabled, input[type="button"]:disabled, .strata-button.disabled, .strata-button:disabled {
     background-color: #e7e7e7 !important;

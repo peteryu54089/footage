@@ -10,6 +10,7 @@ const router = new Router();
 router.get('/', index);
 router.get('/db', db);
 router.get('/classic-black', classic.black);
+router.get('/classic-price', classic.price);
 
 module.exports = router;
 
