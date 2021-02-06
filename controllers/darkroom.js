@@ -14,5 +14,11 @@ darkroom.class = async(ctx) => {
     });
 };
 
+darkroom.lab = async(ctx) => {
+    await ctx.render('darkroom-lab', {
+        
+    });
+};
+
 module.exports = darkroom;
 

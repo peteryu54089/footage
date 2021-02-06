@@ -15,6 +15,7 @@ router.get('/classic-price', classic.price);
 router.get('/classic-photobooth', classic.photobooth);
 router.get('/darkroom-film', darkroom.film);
 router.get('/darkroom-class', darkroom.class);
+router.get('/darkroom-lab', darkroom.lab);
 
 module.exports = router;
 
