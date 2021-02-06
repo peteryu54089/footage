@@ -4,6 +4,7 @@ const Router = require('koa-router');
 const index = require('../controllers/index');
 const db = require('../controllers/db');
 const classic = require('../controllers/classic');
+const darkroom = require('../controllers/darkroom');
 
 const router = new Router();
 
@@ -12,6 +13,7 @@ router.get('/db', db);
 router.get('/classic-black', classic.black);
 router.get('/classic-price', classic.price);
 router.get('/classic-photobooth', classic.photobooth);
+router.get('/darkroom-film', darkroom.film);
 
 module.exports = router;
 
