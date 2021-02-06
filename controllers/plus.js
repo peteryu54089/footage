@@ -20,5 +20,11 @@ plus.film = async(ctx) => {
     });
 };
 
+plus.price = async(ctx) => {
+    await ctx.render('plus-price', {
+        
+    });
+};
+
 module.exports = plus;
 
