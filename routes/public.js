@@ -20,6 +20,7 @@ router.get('/darkroom-lab', darkroom.lab);
 router.get('/darkroom-price', darkroom.price);
 router.get('/darkroom-photobooth', darkroom.photobooth);
 router.get('/plus-color', plus.color);
+router.get('/plus-profile', plus.profile);
 
 module.exports = router;
 

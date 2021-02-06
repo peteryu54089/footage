@@ -8,5 +8,11 @@ plus.color = async(ctx) => {
     });
 };
 
+plus.profile = async(ctx) => {
+    await ctx.render('plus-profile', {
+        
+    });
+};
+
 module.exports = plus;
 
