@@ -1,0 +1,54 @@
+doctype html
+head
+  title Footage
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+  link(rel='icon' href='favicon.ico')
+  link(rel='shortcut icon' href='favicon.ico')
+  link(rel='bookmark' href='favicon.ico')
+  link(rel='stylesheet' href='assets/css/strata.css')
+  link(rel='stylesheet' href='assets/css/main.css')
+  link(rel='stylesheet' href='assets/css/editorial.css')
+  noscript
+    link(rel='stylesheet' href='assets/css/noscript.css')
+#page-wrapper
+  include includes/header.pug
+  // Main
+  #main
+    section.strata-section
+      .strata-row
+        .col-2.col-12-xsmall
+        .col-2.col-3-xsmall
+          a.strata-button.fit(href='/customer-price') 全部
+        .col-2.col-3-xsmall
+          a.strata-button.fit(href='/classic-price') 經典
+        .col-2.col-3-xsmall
+          a.strata-button.fit.primary(href='/darkroom-price') 暗房
+        .col-2.col-3-xsmall
+          a.strata-button.fit(href='/plus-price') 進階
+        .col-2.col-12-xsmall
+    section.strata-section
+      .strata-row
+        article.col-4.col-6-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/darkroom-price/darkroom-price-01.jpg')
+            img(src='images/thumbs/darkroom-price/darkroom-price-01.jpg' alt='')
+        article.col-4.col-6-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/darkroom-price/darkroom-price-02.jpg')
+            img(src='images/thumbs/darkroom-price/darkroom-price-02.jpg' alt='')
+        article.col-4.col-6-xsmall.work-item
+          a.image.fit.thumb(href='images/fulls/darkroom-price/darkroom-price-03.jpg')
+            img(src='images/thumbs/darkroom-price/darkroom-price-03.jpg' alt='')
+  include includes/footer.pug
+// Scripts
+script(src='assets/js/jquery.min.js')
+script(src='assets/js/jquery.scrolly.min.js')
+script(src='assets/js/jquery.dropotron.min.js')
+script(src='assets/js/jquery.scrollex.min.js')
+script(src='assets/js/browser.min.js')
+script(src='assets/js/breakpoints.min.js')
+script(src='assets/js/util.js')
+script(src='assets/js/main.js')
+script(src='assets/js/editorial.js')
+script(src='assets/js/jquery.poptrox.min.js')
+script(src='assets/js/strata.js')
+

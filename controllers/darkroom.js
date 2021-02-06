@@ -20,5 +20,11 @@ darkroom.lab = async(ctx) => {
     });
 };
 
+darkroom.price = async(ctx) => {
+    await ctx.render('darkroom-price', {
+        
+    });
+};
+
 module.exports = darkroom;
 
