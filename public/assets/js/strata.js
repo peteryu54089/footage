@@ -14,7 +14,7 @@
     // Lightbox gallery.
     $window.on('load', function() {
 
-        $('#two').poptrox({
+        $('.strata-section').poptrox({
             caption: function($a) {
                 return $a.next('h3').text();
             },

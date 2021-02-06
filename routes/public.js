@@ -11,6 +11,7 @@ router.get('/', index);
 router.get('/db', db);
 router.get('/classic-black', classic.black);
 router.get('/classic-price', classic.price);
+router.get('/classic-photobooth', classic.photobooth);
 
 module.exports = router;
 

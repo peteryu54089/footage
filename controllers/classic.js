@@ -14,5 +14,11 @@ classic.price = async(ctx) => {
     });
 };
 
+classic.photobooth = async(ctx) => {
+    await ctx.render('classic-photobooth', {
+    
+    });
+};
+
 module.exports = classic;
 
