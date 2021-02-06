@@ -14,5 +14,11 @@ plus.profile = async(ctx) => {
     });
 };
 
+plus.film = async(ctx) => {
+    await ctx.render('plus-film', {
+        
+    });
+};
+
 module.exports = plus;
 
