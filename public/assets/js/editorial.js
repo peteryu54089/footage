@@ -25,7 +25,7 @@
             $(this).next().next().next().next().toggleClass('active');
             $(this).next().next().next().next().next().toggleClass('active');
         }
-        if ($(this).text() === '攝影棚') {
+        if ($(this).text() === '照相亭') {
             $(this).next().toggleClass('active');
         }
         if ($(this).text() === '店#') {

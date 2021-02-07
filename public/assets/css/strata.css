@@ -91,6 +91,8 @@ a:hover {
 strong.strata-strong, b.strata-b {
     color: black;
     font-weight: bold;
+    font-family: 'ColaborateMediumRegular', Arial, sans-serif;
+    font-weight: 700;
 }
 em, i {
     font-style: italic;
@@ -1574,7 +1576,7 @@ input[type="radio"]+label:before {
     display: block;
     height: 100%;
     left: 0;
-    opacity: 0.5;
+    opacity: 0;
     position: absolute;
     top: 0;
     width: 100%;
@@ -1638,6 +1640,15 @@ input[type="radio"]+label:before {
     width: 100%;
 }
 .image.fit img {
+    width: 100%;
+}
+.image.center {
+    display: block;
+    margin: 0 0 2em 0;
+    width: 100%;
+    padding: 0 1.5em 0 1.5em;
+}
+.image.center img {
     width: 100%;
 }
 .image.avatar {
