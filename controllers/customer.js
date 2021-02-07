@@ -26,5 +26,11 @@ customer.qna = async(ctx) => {
     });
 };
 
+customer.notice = async(ctx) => {
+    await ctx.render('customer-notice', {
+        
+    });
+};
+
 module.exports = customer;
 
