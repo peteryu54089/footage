@@ -7,6 +7,7 @@ const classic = require('../controllers/classic');
 const darkroom = require('../controllers/darkroom');
 const plus = require('../controllers/plus');
 const photobooth = require('../controllers/photobooth');
+const shop = require('../controllers/shop');
 
 const router = new Router();
 
@@ -26,6 +27,7 @@ router.get('/plus-film', plus.film);
 router.get('/plus-price', plus.price);
 router.get('/plus-photobooth', plus.photobooth);
 router.get('/photobooth-about', photobooth.about);
+router.get('/shop-about', shop.about);
 
 module.exports = router;
 
