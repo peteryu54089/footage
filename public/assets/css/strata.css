@@ -152,6 +152,10 @@ hr.strata-major {
     border-bottom: solid 2px #e44c65;
     margin: -0.5em 0 2em 0;
 }
+hr.strata-major.gray {
+    border-bottom: dotted 1px gray;
+    margin: 0.5em 0 1.5em 0;
+}
 blockquote {
     border-left: solid 6px #efefef;
     font-style: italic;
@@ -2283,6 +2287,9 @@ body.is-touch .poptrox-popup .nav-next, body.is-touch .poptrox-popup .nav-previo
     }
     header.strata-major {
         text-align: center;
+    }
+    header.strata-major.left {
+        text-align: left;
     }
     /* List */
     ul.labeled-icons li {

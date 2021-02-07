@@ -14,5 +14,11 @@ customer.price = async(ctx) => {
     });
 };
 
+customer.faq = async(ctx) => {
+    await ctx.render('customer-faq', {
+        
+    });
+};
+
 module.exports = customer;
 
