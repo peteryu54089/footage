@@ -8,5 +8,11 @@ shop.about = async(ctx) => {
     });
 };
 
+shop.photoboothcase = async(ctx) => {
+    await ctx.render('shop-photoboothcase', {
+        
+    });
+};
+
 module.exports = shop;
 

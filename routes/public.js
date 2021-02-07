@@ -28,6 +28,7 @@ router.get('/plus-price', plus.price);
 router.get('/plus-photobooth', plus.photobooth);
 router.get('/photobooth-about', photobooth.about);
 router.get('/shop-about', shop.about);
+router.get('/shop-photoboothcase', shop.photoboothcase);
 
 module.exports = router;
 
