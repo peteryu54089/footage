@@ -8,6 +8,7 @@ const darkroom = require('../controllers/darkroom');
 const plus = require('../controllers/plus');
 const photobooth = require('../controllers/photobooth');
 const shop = require('../controllers/shop');
+const customer = require('../controllers/customer');
 
 const router = new Router();
 
@@ -29,6 +30,7 @@ router.get('/plus-photobooth', plus.photobooth);
 router.get('/photobooth-about', photobooth.about);
 router.get('/shop-about', shop.about);
 router.get('/shop-photoboothcase', shop.photoboothcase);
+router.get('/customer-contact', customer.contact);
 
 module.exports = router;
 

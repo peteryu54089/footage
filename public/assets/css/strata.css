@@ -1371,6 +1371,9 @@ header.strata-major:after {
     max-width: 20em;
     width: 75%;
 }
+header.strata-major.center {
+    text-align: center;
+}
 /* Form */
 
 form {
