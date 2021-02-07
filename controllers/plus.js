@@ -26,5 +26,11 @@ plus.price = async(ctx) => {
     });
 };
 
+plus.photobooth = async(ctx) => {
+    await ctx.render('plus-photobooth', {
+        
+    });
+};
+
 module.exports = plus;
 

@@ -23,6 +23,7 @@ router.get('/plus-color', plus.color);
 router.get('/plus-profile', plus.profile);
 router.get('/plus-film', plus.film);
 router.get('/plus-price', plus.price);
+router.get('/plus-photobooth', plus.photobooth);
 
 module.exports = router;
 
