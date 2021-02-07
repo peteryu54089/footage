@@ -20,5 +20,11 @@ customer.faq = async(ctx) => {
     });
 };
 
+customer.qna = async(ctx) => {
+    await ctx.render('customer-qna', {
+        
+    });
+};
+
 module.exports = customer;
 

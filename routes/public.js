@@ -33,6 +33,7 @@ router.get('/shop-photoboothcase', shop.photoboothcase);
 router.get('/customer-contact', customer.contact);
 router.get('/customer-price', customer.price);
 router.get('/customer-faq', customer.faq);
+router.get('/customer-qna', customer.qna);
 
 module.exports = router;
 
