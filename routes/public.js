@@ -31,6 +31,7 @@ router.get('/photobooth-about', photobooth.about);
 router.get('/shop-about', shop.about);
 router.get('/shop-photoboothcase', shop.photoboothcase);
 router.get('/customer-contact', customer.contact);
+router.get('/customer-price', customer.price);
 
 module.exports = router;
 

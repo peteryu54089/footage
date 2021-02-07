@@ -8,5 +8,11 @@ customer.contact = async(ctx) => {
     });
 };
 
+customer.price = async(ctx) => {
+    await ctx.render('customer-price', {
+        
+    });
+};
+
 module.exports = customer;
 
