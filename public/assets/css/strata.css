@@ -2064,7 +2064,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     border-radius: 0.35em;
     box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    padding-bottom: 3em;
+    padding-bottom: 0;
 }
 .poptrox-popup .loader {
     text-decoration: none;

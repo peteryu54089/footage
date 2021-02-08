@@ -23,7 +23,7 @@
             popupCloserText: '',
             popupLoaderText: '',
             selector: '.work-item a.image',
-            usePopupCaption: true,
+            usePopupCaption: false,
             usePopupDefaultStyling: false,
             usePopupEasyClose: false,
             usePopupNav: true,
