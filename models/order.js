@@ -8,15 +8,15 @@ const Order = db.define('order', {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal('uuid_generate_v4()'),
         primaryKey: true
-    }, user_id: {
+    }, member_id: {
         type: Sequelize.UUID,
         allowNull: true,
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
         references: {
-            model: 'user',
+            model: 'member',
             key: 'id',
-            as: 'user_id'
+            as: 'member_id'
         }
     }, product_id: {
         type: Sequelize.UUID,
@@ -28,6 +28,18 @@ const Order = db.define('order', {
             key: 'id',
             as: 'product_id'
         }
+    }, name: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+    }, email: {
+        type: Sequelize.STRING(50),
+        allowNull: false
+    }, phone: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+    }, sex: {
+        type: Sequelize.STRING(10),
+        allowNull: false
     }, begin_time: {
         type: Sequelize.DATE,
         allowNull: false
@@ -47,9 +59,9 @@ const Order = db.define('order', {
 });
 
 Order.associate = models => {
-    Order.belongsTo(models.user, {
+    Order.belongsTo(models.member, {
         foreignKey: {
-            name: 'user_id',
+            name: 'member_id',
             allowNull: true
         },
         onDelete: 'SET NULL',

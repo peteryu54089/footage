@@ -8,7 +8,7 @@ const db = async (ctx, next) => {
 };*/
 
 const Admin = require('../models/admin');
-const User = require('../models/user');
+const Member = require('../models/member');
 const Product = require('../models/product');
 const Close = require('../models/close');
 const Order = require('../models/order');

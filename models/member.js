@@ -3,7 +3,7 @@
 const Sequelize = require('sequelize');
 const db = require('../lib/db');
 
-const User = db.define('user', {
+const Member = db.define('member', {
     id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal('uuid_generate_v4()'),
@@ -11,16 +11,13 @@ const User = db.define('user', {
     }, name: {
         type: Sequelize.STRING(20),
         allowNull: false
-    }, account: {
-        type: Sequelize.STRING(20),
-        allowNull: false,
-        unique: true
     }, password: {
         type: Sequelize.STRING(20),
         allowNull: false
     }, email: {
         type: Sequelize.STRING(50),
-        allowNull: false
+        allowNull: false,
+        unique: true
     }, phone: {
         type: Sequelize.STRING(20),
         allowNull: false
@@ -33,11 +30,11 @@ const User = db.define('user', {
     underscored: true
 });
 
-User.associate = models => {
-    User.hasMany(models.order);
+Member.associate = models => {
+    Member.hasMany(models.order);
 };
 
-User.sync();
+Member.sync();
 
-module.exports = User;
+module.exports = Member;
 
