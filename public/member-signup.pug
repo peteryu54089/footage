@@ -9,6 +9,7 @@ head
   link(rel='stylesheet' href='assets/css/strata.css')
   link(rel='stylesheet' href='assets/css/main.css')
   link(rel='stylesheet' href='assets/css/editorial.css')
+  link(rel='stylesheet' href='assets/css/member.css')
   noscript
     link(rel='stylesheet' href='assets/css/noscript.css')
 #page-wrapper
@@ -16,6 +17,23 @@ head
   // Main
   #main
     section.strata-section
+      .strata-row
+        .col-4.col-12-xsmall
+        .col-4.col-12-xsmall
+          .member-card
+            header.strata-major.center
+              h2
+                | Sign Up
+            input#name(type='text' placeholder='姓名')
+            br
+            input#email(type='email' placeholder='電子郵件')
+            br
+            input#password(type='password' placeholder='密碼')
+            br
+            input#phone(type='text' placeholder='電話')
+            br
+            a.strata-button.fit(href='/member-center') 註冊
+        .col-4.col-12-xsmall
   include includes/footer.pug
 // Scripts
 script(src='assets/js/jquery.min.js')
@@ -29,4 +47,5 @@ script(src='assets/js/main.js')
 script(src='assets/js/editorial.js')
 script(src='assets/js/jquery.poptrox.min.js')
 script(src='assets/js/strata.js')
+script(src='assets/js/member.js')
 
