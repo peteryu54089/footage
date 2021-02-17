@@ -1,0 +1,51 @@
+doctype html
+head
+  title Footage
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+  link(rel='icon' href='favicon.ico')
+  link(rel='shortcut icon' href='favicon.ico')
+  link(rel='bookmark' href='favicon.ico')
+  link(rel='stylesheet' href='assets/css/strata.css')
+  link(rel='stylesheet' href='assets/css/main.css')
+  link(rel='stylesheet' href='assets/css/editorial.css')
+  link(rel='stylesheet' href='assets/css/member.css')
+  noscript
+    link(rel='stylesheet' href='assets/css/noscript.css')
+#page-wrapper
+  include includes/header.pug
+  // Main
+  #main
+    section.strata-section
+      .strata-row
+        .col-4.col-12-xsmall
+        .col-4.col-12-xsmall
+          .member-card
+            header.strata-major.center
+              h2
+                | Sign In
+            input#account(type='text' placeholder='帳號')
+            br
+            input#password(type='password' placeholder='密碼')
+            br
+            a.strata-button.fit(href='/member-center') 登入
+            br
+            br
+            a(href='/member-signup') 註冊會員
+            a.float-right(href='/member-password') 忘記密碼
+        .col-4.col-12-xsmall
+  include includes/footer.pug
+// Scripts
+script(src='assets/js/jquery.min.js')
+script(src='assets/js/jquery.scrolly.min.js')
+script(src='assets/js/jquery.dropotron.min.js')
+script(src='assets/js/jquery.scrollex.min.js')
+script(src='assets/js/browser.min.js')
+script(src='assets/js/breakpoints.min.js')
+script(src='assets/js/util.js')
+script(src='assets/js/main.js')
+script(src='assets/js/editorial.js')
+script(src='assets/js/jquery.poptrox.min.js')
+script(src='assets/js/strata.js')
+script(src='assets/js/member.js')
+

@@ -18,7 +18,12 @@ function responseHandler(ctx) {
 // 並將異常消息回傳給客戶端: { code: '錯誤代碼', message: '錯誤信息' }
 function errorHandler (ctx, next) {
     return next().catch(err => {
-        if (err.code == null) {
+        if (err.status === 401) {
+            ctx.redirect('member-signin');
+            return Promise.resolve();
+        }
+    
+        if (err.code === null) {
             logger.error(err.stack);
         }
 

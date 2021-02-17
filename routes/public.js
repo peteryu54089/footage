@@ -9,6 +9,7 @@ const plus = require('../controllers/plus');
 const photobooth = require('../controllers/photobooth');
 const shop = require('../controllers/shop');
 const customer = require('../controllers/customer');
+const member = require('../controllers/member');
 
 const router = new Router();
 
@@ -35,6 +36,9 @@ router.get('/customer-price', customer.price);
 router.get('/customer-faq', customer.faq);
 router.get('/customer-qna', customer.qna);
 router.get('/customer-notice', customer.notice);
+router.get('/member-signin', member.signin);
+router.get('/member-signup', member.signup);
+router.get('/member-password', member.password);
 
 module.exports = router;
 

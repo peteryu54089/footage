@@ -7,6 +7,7 @@ const views = require('koa-views');
 
 const config = require('./config');
 const publicRouter = require('./routes/public');
+const privateRouter = require('./routes/private');
 const { loggerMiddleware } = require('./middlewares/logger');
 const { errorHandler, responseHandler } = require('./middlewares/response');
 
@@ -29,6 +30,7 @@ app.use(views(__dirname + '/public', {
 
 // Routes
 app.use(publicRouter.routes(), publicRouter.allowedMethods());
+app.use(privateRouter.routes(), privateRouter.allowedMethods());
 
 // Response
 app.use(responseHandler);

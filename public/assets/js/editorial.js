@@ -1,6 +1,6 @@
 (function($) {
     $('.link.depth-0').each(function() {
-        if ($(this).text() !== '登入') {
+        if ($(this).text() !== '會員中心') {
             $(this).addClass('opener');
         }
     });
