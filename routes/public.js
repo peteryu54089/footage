@@ -36,6 +36,7 @@ router.get('/customer-price', customer.price);
 router.get('/customer-faq', customer.faq);
 router.get('/customer-qna', customer.qna);
 router.get('/customer-notice', customer.notice);
+router.get('/member-center', member.center);
 router.get('/member-signin', member.signin);
 router.get('/member-signup', member.signup);
 router.get('/member-password', member.password);
