@@ -26,5 +26,18 @@ member.password = async(ctx) => {
     });
 };
 
+member.signuppost = async(ctx) => {
+    let name = ctx.request.body.name;
+    let email = ctx.request.body.email;
+    let password = ctx.request.body.password;
+    let phone = ctx.request.body.phone;
+    let sex = ctx.request.body.sex;
+    console.log(name);
+    console.log(email);
+    console.log(password);
+    console.log(phone);
+    console.log(sex);
+};
+
 module.exports = member;
 

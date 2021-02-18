@@ -20,19 +20,27 @@ head
       .strata-row
         .col-4.col-12-xsmall
         .col-4.col-12-xsmall
-          .member-card
+          form.member-card(action='/member-signup-post', method='post')
             header.strata-major.center
               h2
                 | Sign Up
-            input#name(type='text' placeholder='姓名')
+            input(type='text' name='name' placeholder='姓名')
             br
-            input#email(type='email' placeholder='電子郵件')
+            input(type='email' name='email' placeholder='電子郵件')
             br
-            input#password(type='password' placeholder='密碼')
+            input(type='password' name='password' placeholder='密碼')
             br
-            input#phone(type='text' placeholder='電話')
+            input(type='password' placeholder='再次確認密碼')
             br
-            a.strata-button.fit(href='/member-center') 註冊
+            input(type='text' name='phone' placeholder='電話')
+            br
+            input#male(type='radio' name='sex' value='先生' checked='')
+            label(for='male') 先生
+            input#female(type='radio' name='sex' value='小姐')
+            label(for='female') 小姐
+            br
+            br
+            button.strata-button.fit(type='submit') 註冊
         .col-4.col-12-xsmall
   include includes/footer.pug
 // Scripts

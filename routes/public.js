@@ -39,6 +39,7 @@ router.get('/customer-notice', customer.notice);
 router.get('/member-signin', member.signin);
 router.get('/member-signup', member.signup);
 router.get('/member-password', member.password);
+router.post('/member-signup-post', member.signuppost);
 
 module.exports = router;
 
