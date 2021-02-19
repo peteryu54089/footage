@@ -17,6 +17,12 @@ head
   // Main
   #main
     section.strata-section
+      .strata-row
+        .col-4.col-12-xsmall
+        .col-4.col-12-xsmall
+          form.member-card(action='/member-signout-post' method='post')
+            button.strata-button.fit(type='submit') 登出
+        .col-4.col-12-xsmall
   include includes/footer.pug
 // Scripts
 script(src='assets/js/jquery.min.js')
