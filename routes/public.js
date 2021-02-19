@@ -40,6 +40,7 @@ router.get('/member-center', member.center);
 router.get('/member-signin', member.signin);
 router.get('/member-signup', member.signup);
 router.get('/member-password', member.password);
+router.post('/member-signin-post', member.signinpost);
 router.post('/member-signup-post', member.signuppost);
 router.post('/member-signout-post', member.signoutpost);
 

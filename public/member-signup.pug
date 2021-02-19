@@ -20,7 +20,7 @@ head
       .strata-row
         .col-4.col-12-xsmall
         .col-4.col-12-xsmall
-          form.member-card(action='/member-signup-post' method='post')
+          form#signup-form.member-card(action='/member-signup-post' method='post')
             header.strata-major.center
               h2
                 | Sign Up
@@ -30,7 +30,7 @@ head
             br
             input(type='password' name='password' placeholder='密碼')
             br
-            input(type='password' placeholder='再次確認密碼')
+            input(type='password' name='again' placeholder='再次確認密碼')
             br
             input(type='text' name='phone' placeholder='電話')
             br
@@ -55,4 +55,5 @@ script(src='assets/js/main.js')
 script(src='assets/js/editorial.js')
 script(src='assets/js/jquery.poptrox.min.js')
 script(src='assets/js/strata.js')
+script(src='assets/js/member.js')
 

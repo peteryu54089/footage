@@ -34,14 +34,39 @@ member.password = async(ctx) => {
     });
 };
 
-member.signuppost = async(ctx) => {
+member.signinpost = async(ctx, next) => {
+    let email = ctx.request.body.email;
+    let password = ctx.request.body.password;
+    let member = await Member.findOne({ where: { email: email, password: password } });
+    
+    if (member === null) {
+        ctx.redirect('member-password');
+        return next();
+    }
+    
+    ctx.session.email = email;
+    ctx.redirect('member-center');
+};
+
+member.signuppost = async(ctx, next) => {
     let name = ctx.request.body.name;
     let email = ctx.request.body.email;
     let password = ctx.request.body.password;
     let phone = ctx.request.body.phone;
     let sex = ctx.request.body.sex;
     
-    //await Member.create({ name, email, password, phone, sex });
+    if (name.trim() === '' || email.trim() === '' || password.trim() === '' || phone.trim() === '' || sex.trim() === '') {
+        ctx.redirect('member-signup');
+        return next();
+    }
+    
+    let member = await Member.findOne({ where: { email: email } });
+    if (member !== null) {
+        ctx.redirect('member-signin');
+        return next();
+    }
+    
+    await Member.create({ name, email, password, phone, sex });
     ctx.session.email = email;
     ctx.redirect('member-center');
 };
