@@ -10,6 +10,7 @@ head
   link(rel='stylesheet' href='assets/css/main.css')
   link(rel='stylesheet' href='assets/css/editorial.css')
   link(rel='stylesheet' href='assets/css/member.css')
+  link(rel='stylesheet' href='assets/css/member-table.css')
   noscript
     link(rel='stylesheet' href='assets/css/noscript.css')
 #page-wrapper
@@ -18,11 +19,62 @@ head
   #main
     section.strata-section
       .strata-row
-        .col-4.col-12-xsmall
-        .col-4.col-12-xsmall
-          form.member-card(action='/member-signout-post' method='post')
-            button.strata-button.fit(type='submit') 登出
-        .col-4.col-12-xsmall
+        .col-3.col-12-xsmall
+        .col-2.col-4-xsmall
+          a.strata-button.fit.primary(href='/member-center') 訂單
+        .col-2.col-4-xsmall
+          a.strata-button.fit(href='/member-info') 會員資料
+        .col-2.col-4-xsmall
+          a#signout-btn.strata-button.fit(href='javascript:void(0)') 登出
+        .col-3.col-12-xsmall
+    section.strata-section
+      .table-container
+        ul.responsive-table
+          li.table-header
+            .col.col-1
+              strong.member-strong Job Id
+            .col.col-2
+              strong.member-strong Customer Name
+            .col.col-3
+              strong.member-strong Amount Due
+            .col.col-4
+              strong.member-strong Payment Status
+          li.table-row
+            .col.col-1(data-label='Job Id')
+              strong.member-strong 42235
+            .col.col-2(data-label='Customer Name')
+              strong.member-strong John Doe
+            .col.col-3(data-label='Amount')
+              strong.member-strong $350
+            .col.col-4(data-label='Payment Status')
+              strong.member-strong Pending
+          li.table-row
+            .col.col-1(data-label='Job Id')
+              strong.member-strong 42442
+            .col.col-2(data-label='Customer Name')
+              strong.member-strong Jennifer Smith
+            .col.col-3(data-label='Amount')
+              strong.member-strong $220
+            .col.col-4(data-label='Payment Status')
+              strong.member-strong Pending
+          li.table-row
+            .col.col-1(data-label='Job Id')
+              strong.member-strong 42257
+            .col.col-2(data-label='Customer Name')
+              strong.member-strong John Smith
+            .col.col-3(data-label='Amount')
+              strong.member-strong $341
+            .col.col-4(data-label='Payment Status')
+              strong.member-strong Pending
+          li.table-row
+            .col.col-1(data-label='Job Id')
+              strong.member-strong 42311
+            .col.col-2(data-label='Customer Name')
+              strong.member-strong John Carpenter
+            .col.col-3(data-label='Amount')
+              strong.member-strong $115
+            .col.col-4(data-label='Payment Status')
+              strong.member-strong Pending
   include includes/footer.pug
 // Scripts
 script(src='assets/js/jquery.min.js')
@@ -36,4 +88,5 @@ script(src='assets/js/main.js')
 script(src='assets/js/editorial.js')
 script(src='assets/js/jquery.poptrox.min.js')
 script(src='assets/js/strata.js')
+script(src='assets/js/member.js')
 

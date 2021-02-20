@@ -46,4 +46,15 @@ $(function() {
             return false;
         }
     });
+    $('#signout-btn').on('click', function() {
+        $.ajax({
+            url: '/member-signout-post',
+            type: 'POST',
+            processData: false,
+            contentType: false,
+            success: function() {
+                location.href = '/member-signin';
+            }
+        });
+    });
 });
