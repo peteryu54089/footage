@@ -1,0 +1,79 @@
+doctype html
+head
+  title Footage
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+  link(rel='icon' href='favicon.ico')
+  link(rel='shortcut icon' href='favicon.ico')
+  link(rel='bookmark' href='favicon.ico')
+  link(rel='stylesheet' href='assets/css/strata.css')
+  link(rel='stylesheet' href='assets/css/main.css')
+  link(rel='stylesheet' href='assets/css/editorial.css')
+  link(rel='stylesheet' href='assets/css/member-order.css')
+  noscript
+    link(rel='stylesheet' href='assets/css/noscript.css')
+#page-wrapper
+  include includes/header.pug
+  // Main
+  #main
+    section.strata-section
+      .strata-row
+        .col-3.col-12-xsmall
+        .col-2.col-4-xsmall
+          a.strata-button.fit.primary(href='/member-center') 預約紀錄
+        .col-2.col-4-xsmall
+          a.strata-button.fit(href='/member-info') 會員資料
+        .col-2.col-4-xsmall
+          a#signout-btn.strata-button.fit(href='javascript:void(0)') 登出
+        .col-3.col-12-xsmall
+    section.strata-section
+      if orderList.length === 0
+        header.strata-major.center
+          br
+          h4
+            | 暫無資料!
+      if orderList.length > 0
+        .table-container
+          ul.responsive-table
+            li.table-header
+              .col.col-1
+                strong.order-strong 名稱
+              .col.col-2
+                strong.order-strong 開始時間
+              .col.col-3
+                strong.order-strong 結束時間
+              .col.col-4
+                strong.order-strong 價格
+              .col.col-5
+                strong.order-strong 狀態
+          each order in orderList
+              li.table-row
+                .col.col-1(data-label='名稱')
+                  strong.order-strong #{order.product_name}
+                .col.col-2(data-label='開始時間')
+                  strong.order-strong #{order.begin_time}
+                .col.col-3(data-label='結束時間')
+                  strong.order-strong #{order.end_time}
+                .col.col-4(data-label='價格')
+                  strong.order-strong #{order.price}
+                .col.col-5(data-label='狀態')
+                  if order.is_finished
+                    a#order-del-btn(href='javascript:void(0)') 取消預約
+                    strong.order-hidden #{order.id}
+                  else
+                    strong.order-strong 已完成
+  include includes/footer.pug
+// Scripts
+script(src='assets/js/jquery.min.js')
+script(src='assets/js/jquery.scrolly.min.js')
+script(src='assets/js/jquery.dropotron.min.js')
+script(src='assets/js/jquery.scrollex.min.js')
+script(src='assets/js/browser.min.js')
+script(src='assets/js/breakpoints.min.js')
+script(src='assets/js/util.js')
+script(src='assets/js/main.js')
+script(src='assets/js/editorial.js')
+script(src='assets/js/jquery.poptrox.min.js')
+script(src='assets/js/strata.js')
+script(src='assets/js/member-order.js')
+

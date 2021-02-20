@@ -36,13 +36,15 @@ router.get('/customer-price', customer.price);
 router.get('/customer-faq', customer.faq);
 router.get('/customer-qna', customer.qna);
 router.get('/customer-notice', customer.notice);
-router.get('/member-center', member.center);
+router.get('/member-order', member.order);
+router.get('/member-info', member.info);
 router.get('/member-signin', member.signin);
 router.get('/member-signup', member.signup);
 router.get('/member-password', member.password);
 router.post('/member-signin-post', member.signinpost);
 router.post('/member-signup-post', member.signuppost);
 router.post('/member-signout-post', member.signoutpost);
+router.post('/member-order-delete', member.orderdelete);
 
 module.exports = router;
 

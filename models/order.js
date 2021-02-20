@@ -28,7 +28,7 @@ const Order = db.define('order', {
             key: 'id',
             as: 'product_id'
         }
-    }, memebr_name: {
+    }, member_name: {
         type: Sequelize.STRING(20),
         allowNull: false
     }, product_name: {

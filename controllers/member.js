@@ -5,15 +5,43 @@ const jwt = require('jsonwebtoken');
 const session = require('koa-session');
 const config = require('../config');
 const Member = require('../models/member');
+const Order = require('../models/order');
 
-member.center = async(ctx) => {
+member.order = async(ctx, next) => {
     if (ctx.session.email === undefined || ctx.session.email === null) {
         ctx.redirect('member-signin');
     } else {
-        await ctx.render('member-center', {
-            
+        let member = await Member.findOne({ where: { email: ctx.session.email } });
+        
+        if (member === null) {
+            ctx.session.email = null;
+            ctx.redirect('member-signin');
+            return next();
+        }
+        
+        let orders = await Order.findAll({ where: { member_id: member.id }, order: [['begin_time', 'DESC']] });
+        let orderList = [];
+        orders.forEach(order => {
+            orderList.push({
+                id: order.id,
+                product_name: order.product_name,
+                begin_time: String(order.begin_time).substring(4, 24),
+                end_time: String(order.end_time).substring(4, 24),
+                price: order.price,
+                is_finished: Date.now() >= order.begin_time ? true : false
+            });
+        });
+        
+        await ctx.render('member-order', {
+            orderList: orderList
         });
     }
+};
+
+member.info = async(ctx) => {
+    await ctx.render('member-info', {
+        
+    });
 };
 
 member.signin = async(ctx) => {
@@ -45,7 +73,7 @@ member.signinpost = async(ctx, next) => {
     }
     
     ctx.session.email = email;
-    ctx.redirect('member-center');
+    ctx.redirect('member-order');
 };
 
 member.signuppost = async(ctx, next) => {
@@ -68,12 +96,18 @@ member.signuppost = async(ctx, next) => {
     
     await Member.create({ name, email, password, phone, sex });
     ctx.session.email = email;
-    ctx.redirect('member-center');
+    ctx.redirect('member-order');
 };
 
 member.signoutpost = async(ctx) => {
     ctx.session.email = null;
     ctx.redirect('member-signin');
+};
+
+member.orderdelete = async(ctx, next) => {
+    await Order.destroy({ where: { id: ctx.request.body.id } });
+    ctx.result = 'success';
+    return next();
 };
 
 module.exports = member;
