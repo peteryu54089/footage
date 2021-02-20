@@ -9,7 +9,7 @@ head
   link(rel='stylesheet' href='assets/css/strata.css')
   link(rel='stylesheet' href='assets/css/main.css')
   link(rel='stylesheet' href='assets/css/editorial.css')
-  link(rel='stylesheet' href='assets/css/member-form.css')
+  link(rel='stylesheet' href='assets/css/member.css')
   noscript
     link(rel='stylesheet' href='assets/css/noscript.css')
 #page-wrapper
@@ -17,6 +17,44 @@ head
   // Main
   #main
     section.strata-section
+      .strata-row
+        .col-3.col-12-xsmall
+        .col-2.col-4-xsmall
+          a.strata-button.fit(href='/member-order') 預約紀錄
+        .col-2.col-4-xsmall
+          a.strata-button.fit.primary(href='/member-info') 會員資料
+        .col-2.col-4-xsmall
+          a#signout-btn.strata-button.fit(href='javascript:void(0)') 登出
+        .col-3.col-12-xsmall
+    section.strata-section
+      .strata-row
+        .col-4.col-12-xsmall
+        .col-4.col-12-xsmall
+          form#info-form.member-card(action='/member-info-post' method='post')
+            input(type='text' name='name' placeholder='姓名' value=member.name)
+            br
+            input(type='email' name='email' placeholder='電子郵件' value=member.email)
+            br
+            input(type='password' name='password' placeholder='密碼' value=member.password)
+            br
+            input(type='password' name='again' placeholder='再次確認密碼')
+            br
+            input(type='text' name='phone' placeholder='電話' value=member.phone)
+            br
+            if member.sex === '先生'
+              input#male(type='radio' name='sex' value='先生' checked='')
+              label(for='male') 先生
+              input#female(type='radio' name='sex' value='小姐')
+              label(for='female') 小姐
+            else
+              input#male(type='radio' name='sex' value='先生')
+              label(for='male') 先生
+              input#female(type='radio' name='sex' value='小姐' checked='')
+              label(for='female') 小姐
+            br
+            br
+            button.strata-button.fit(type='submit') 儲存
+        .col-4.col-12-xsmall
   include includes/footer.pug
 // Scripts
 script(src='assets/js/jquery.min.js')
@@ -30,5 +68,5 @@ script(src='assets/js/main.js')
 script(src='assets/js/editorial.js')
 script(src='assets/js/jquery.poptrox.min.js')
 script(src='assets/js/strata.js')
-script(src='assets/js/member-form.js')
+script(src='assets/js/member.js')
 
