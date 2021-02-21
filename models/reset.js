@@ -3,17 +3,19 @@
 const Sequelize = require('sequelize');
 const db = require('../lib/db');
 
-const Admin = db.define('admin', {
+const Reset = db.define('reset', {
     id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal('uuid_generate_v4()'),
         primaryKey: true
-    }, account: {
-        type: Sequelize.STRING(20),
+    }, member_id: {
+        type: Sequelize.UUID,
         allowNull: false,
-        unique: true
-    }, password: {
+    }, token: {
         type: Sequelize.STRING(20),
+        allowNull: false
+    }, expired_time: {
+        type: Sequelize.DATE,
         allowNull: false
     }
 }, {
@@ -21,7 +23,7 @@ const Admin = db.define('admin', {
     underscored: true
 });
 
-Admin.sync();
+Reset.sync();
 
-module.exports = Admin;
+module.exports = Reset;
 

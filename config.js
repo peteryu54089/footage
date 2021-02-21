@@ -20,6 +20,10 @@ module.exports = {
           acquire: 30000,
           idle: 10000
         },
+    },
+    gmail: {
+        user: 't109598035@ntut.org.tw',
+        pass: 'a1273329'
     }
 };
 

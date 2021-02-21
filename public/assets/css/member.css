@@ -7,6 +7,9 @@ a.float-right {
 input:enabled {
     color: #000000;
 }
+input.hidden {
+    display: none;
+}
 strong.order-hidden {
     display: none;
 }

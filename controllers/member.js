@@ -3,9 +3,19 @@
 const member = {};
 const jwt = require('jsonwebtoken');
 const session = require('koa-session');
+const nodemailer = require('nodemailer');
 const config = require('../config');
 const Member = require('../models/member');
 const Order = require('../models/order');
+const Reset = require('../models/reset');
+
+var mailTransport = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: config.gmail.user,
+    pass: config.gmail.pass
+  },
+});
 
 member.order = async(ctx, next) => {
     if (ctx.session.email === undefined || ctx.session.email === null) {
@@ -68,8 +78,14 @@ member.signup = async(ctx, next) => {
     });
 };
 
-member.password = async(ctx, next) => {
-    await ctx.render('member-password', {
+member.forgot = async(ctx, next) => {
+    await ctx.render('member-forgot', {
+        
+    });
+};
+
+member.reset = async(ctx, next) => {
+    await ctx.render('member-reset', {
         
     });
 };
@@ -80,7 +96,7 @@ member.signinpost = async(ctx, next) => {
     let member = await Member.findOne({ where: { email: email, password: password } });
     
     if (member === null) {
-        ctx.redirect('member-password');
+        ctx.redirect('member-forgot');
         return next();
     }
     
@@ -160,6 +176,61 @@ member.infopost = async(ctx, next) => {
     
     await member.update({ name: name, email: email, password: password, phone: phone, sex: sex });
     ctx.redirect('member-info');
+};
+
+member.forgotpost = async(ctx, next) => {
+    let token = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < 20; i++ ) {
+        token += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    
+    let member = await Member.findOne({ where: { email: ctx.request.body.email } });
+    if (member === null) {
+        ctx.session.email = null;
+        ctx.redirect('member-signup');
+        return next();
+    }
+    
+    let member_id = member.id;
+    let expired_time = Date.now();
+    await Reset.create({ member_id, token, expired_time });
+    
+    mailTransport.sendMail({
+        from: 'Footage <t109598035@ntut.org.tw>',
+        to: ctx.request.body.email,
+        subject: '[ Footage ] Reset Password',
+        html: '<h1>Hello</h1><h3>您剛申請了重設密碼，請點擊此網址 (http://35.72.85.104/member-reset?token=' + token + ') 進行重設。</h3><h3>若您並無進行上述動作，請與我們 (http://35.72.85.104) 聯繫。</h3><h3>此郵件由系統自動發送，請勿直接回覆。</h3><p>Footage 管理團隊 上</p>',
+    }, function(err) {
+        if (err) {
+            console.log('Unable to send email: ' + err);
+        }
+    });
+    ctx.redirect('member-signin');
+};
+
+member.resetpost = async(ctx, next) => {
+    let reset = await Reset.findOne({ where: { token: ctx.request.body.token } });
+    if (reset === null) {
+        ctx.redirect('member-forgot');
+        return next();
+    }
+    
+    let member = await Member.findOne({ where: { id: reset.member_id } });
+    if (member === null) {
+        ctx.session.email = null;
+        ctx.redirect('member-signup');
+        return next();
+    }
+    
+    if (Math.ceil((Date.now() - reset.expired_time) / (1000 * 3600 * 24)) > 1) {
+        ctx.redirect('member-forgot');
+        return next();
+    }
+    
+    await member.update({ password: ctx.request.body.password });
+    ctx.redirect('member-signin');
 };
 
 module.exports = member;

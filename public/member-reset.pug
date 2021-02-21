@@ -17,6 +17,20 @@ head
   // Main
   #main
     section.strata-section
+      .strata-row
+        .col-4.col-12-xsmall
+        .col-4.col-12-xsmall
+          form#reset-form.member-card(action='/member-reset-post' method='post')
+            header.strata-major.center
+              h2
+                | 重設密碼
+            input(type='password' name='password' placeholder='密碼')
+            br
+            input(type='password' name='again' placeholder='再次確認密碼')
+            br
+            input#token.hidden(type='text' name='token')
+            button.strata-button.fit(type='submit') 儲存
+        .col-4.col-12-xsmall
   include includes/footer.pug
 // Scripts
 script(src='assets/js/jquery.min.js')

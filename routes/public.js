@@ -40,11 +40,14 @@ router.get('/member-order', member.order);
 router.get('/member-info', member.info);
 router.get('/member-signin', member.signin);
 router.get('/member-signup', member.signup);
-router.get('/member-password', member.password);
+router.get('/member-forgot', member.forgot);
+router.get('/member-reset', member.reset);
 router.post('/member-info-post', member.infopost);
 router.post('/member-signin-post', member.signinpost);
 router.post('/member-signup-post', member.signuppost);
 router.post('/member-signout-post', member.signoutpost);
+router.post('/member-forgot-post', member.forgotpost);
+router.post('/member-reset-post', member.resetpost);
 router.post('/member-order-delete', member.orderdelete);
 
 module.exports = router;

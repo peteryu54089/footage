@@ -20,19 +20,13 @@ head
       .strata-row
         .col-4.col-12-xsmall
         .col-4.col-12-xsmall
-          form#signin-form.member-card(action='/member-signin-post' method='post')
+          form#forgot-form.member-card(action='/member-forgot-post' method='post')
             header.strata-major.center
               h2
-                | Sign In
-            input(type='email' name='email' placeholder='電子郵件')
+                | 忘記密碼？
+            input(type='email' name='email' placeholder='重設電子郵件')
             br
-            input(type='password' name='password' placeholder='密碼')
-            br
-            button.strata-button.fit(type='submit') 登入
-            br
-            br
-            a(href='/member-signup') 註冊會員
-            a.float-right(href='/member-forgot') 忘記密碼
+            button.strata-button.fit(type='submit') 發送
         .col-4.col-12-xsmall
   include includes/footer.pug
 // Scripts

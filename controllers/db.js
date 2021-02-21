@@ -12,6 +12,7 @@ const Member = require('../models/member');
 const Product = require('../models/product');
 const Close = require('../models/close');
 const Order = require('../models/order');
+const Reset = require('../models/reset');
 
 const db = async (ctx, next) => {
     

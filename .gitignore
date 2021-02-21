@@ -3,3 +3,5 @@ node_modules
 .env
 data
 static
+docker-compose.yml
+config.js
