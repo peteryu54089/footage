@@ -46,7 +46,7 @@ head
                 strong.order-strong 價格
               .col.col-5
                 strong.order-strong 狀態
-          each order in orderList
+            each order in orderList
               li.table-row
                 .col.col-1(data-label='名稱')
                   strong.order-strong #{order.product_name}
@@ -57,7 +57,7 @@ head
                 .col.col-4(data-label='價格')
                   strong.order-strong #{order.price}
                 .col.col-5(data-label='狀態')
-                  if order.is_finished
+                  if !order.is_finished
                     a#order-del-btn(href='javascript:void(0)') 取消預約
                     strong.order-hidden #{order.id}
                   else
