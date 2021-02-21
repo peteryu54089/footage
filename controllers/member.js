@@ -202,7 +202,7 @@ member.forgotpost = async(ctx, next) => {
         from: 'Footage <t109598035@ntut.org.tw>',
         to: ctx.request.body.email,
         subject: '[ Footage ] Reset Password',
-        html: '<h1>Hello</h1><h3>您剛申請了重設密碼，請點擊此網址 (http://35.72.85.104/member-reset) 進行重設。</h3><h3>若您並無進行上述動作，請與我們 (http://35.72.85.104) 聯繫。</h3><h3>此郵件由系統自動發送，請勿直接回覆。</h3><p>Footage 管理團隊 上</p>',
+        html: '<h1>Hello</h1><h3>您已申請重設密碼，請於瀏覽器輸入以下網址 (http://35.72.85.104/member-reset) 進行重設。</h3><h3>若您並無進行上述動作，請與我們 (http://35.72.85.104) 聯繫。</h3><h3>此郵件由系統自動發送，請勿直接回覆。</h3><p>Footage 管理團隊 上</p>',
     }, function(err) {
         if (err) {
             console.log('Unable to send email: ' + err);
