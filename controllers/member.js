@@ -185,6 +185,7 @@ member.forgotpost = async(ctx, next) => {
     for (let i = 0; i < 20; i++ ) {
         token += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
+    ctx.session.token = token;
     
     let member = await Member.findOne({ where: { email: ctx.request.body.email } });
     if (member === null) {
@@ -201,7 +202,7 @@ member.forgotpost = async(ctx, next) => {
         from: 'Footage <t109598035@ntut.org.tw>',
         to: ctx.request.body.email,
         subject: '[ Footage ] Reset Password',
-        html: '<h1>Hello</h1><h3>您剛申請了重設密碼，請點擊此網址 (http://35.72.85.104/member-reset?token=' + token + ') 進行重設。</h3><h3>若您並無進行上述動作，請與我們 (http://35.72.85.104) 聯繫。</h3><h3>此郵件由系統自動發送，請勿直接回覆。</h3><p>Footage 管理團隊 上</p>',
+        html: '<h1>Hello</h1><h3>您剛申請了重設密碼，請點擊此網址 (http://35.72.85.104/member-reset) 進行重設。</h3><h3>若您並無進行上述動作，請與我們 (http://35.72.85.104) 聯繫。</h3><h3>此郵件由系統自動發送，請勿直接回覆。</h3><p>Footage 管理團隊 上</p>',
     }, function(err) {
         if (err) {
             console.log('Unable to send email: ' + err);
@@ -211,7 +212,7 @@ member.forgotpost = async(ctx, next) => {
 };
 
 member.resetpost = async(ctx, next) => {
-    let reset = await Reset.findOne({ where: { token: ctx.request.body.token } });
+    let reset = await Reset.findOne({ where: { token: ctx.session.token } });
     if (reset === null) {
         ctx.redirect('member-forgot');
         return next();
