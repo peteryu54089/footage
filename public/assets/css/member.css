@@ -1,6 +1,9 @@
 .member-card {
     margin: 1em 0 5em 0;
 }
+a.float-left {
+    float: left;
+}
 a.float-right {
     float: right;
 }
